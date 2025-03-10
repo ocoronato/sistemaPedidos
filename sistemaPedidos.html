@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanna Almeida</title>
+    <link rel="icon" href="https://iili.io/26ETIWl.md.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b7bdf5;
+        }
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            background: #d9defa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart input, .sizes input {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .product {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 3px solid #4f9afc;
+            border-radius: 50px;
+            background: #ffffff;
+        }
+        .product-image {
+            width: 300px;
+            height: 300px;
+            object-fit: scale-down;
+            margin-right: 20px;
+        }
+        .add-to-cart {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
+        .place-order {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .place-order:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .summary {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Planilha de Produtos - Giovanna Almeida</h1>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar Produto..." onkeyup="filterProducts()">
+        </div>
+
+        <!-- Produtos -->
+        <div class="products" id="productList">
+            <!-- Produto 1 -->
+            <div class="product" data-product-name="GA20-305" data-price="100">
+                <img src="https://iili.io/2gb7Fb1.png" alt="Produto" class="product-image">
+                <div class="product-info">
+                    <h3>GA20-305</h3>
+                    <p>Preço Unitário: R$ 100,00</p>
+                    <div class="sizes">
+                        <input type="number" min="0" placeholder="33" data-size="33">
+                        <input type="number" min="0" placeholder="34" data-size="34">
+                        <input type="number" min="0" placeholder="35" data-size="35">
+                        <input type="number" min="0" placeholder="36" data-size="36">
+                        <input type="number" min="0" placeholder="37" data-size="37">
+                        <input type="number" min="0" placeholder="38" data-size="38">
+                        <input type="number" min="0" placeholder="39" data-size="39">
+                        <input type="number" min="0" placeholder="40" data-size="40">
+                    </div>
+                </div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Produto 2 -->
+            <div class="product" data-product-name="GA31-211" data-price="121.2">
+                <img src="https://iili.io/2gbYQne.png" alt="Produto" class="product-image">
+                <div class="product-info">
+                    <h3>GA31-211</h3>
+                    <p>Preço Unitário: R$ 121,20</p>
+                    <div class="sizes">
+                        <input type="number" min="0" placeholder="33" data-size="33">
+                        <input type="number" min="0" placeholder="34" data-size="34">
+                        <input type="number" min="0" placeholder="35" data-size="35">
+                        <input type="number" min="0" placeholder="36" data-size="36">
+                        <input type="number" min="0" placeholder="37" data-size="37">
+                        <input type="number" min="0" placeholder="38" data-size="38">
+                        <input type="number" min="0" placeholder="39" data-size="39">
+                        <input type="number" min="0" placeholder="40" data-size="40">
+                    </div>
+                </div>
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+            </div>
+            <!-- Produto 3 -->
+<div class="product" data-product-name="GA31-261" data-price="100">
+    <img src="https://iili.io/2gbaeRV.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-261</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 4 -->
+<div class="product" data-product-name="GA45-211" data-price="100">
+    <img src="https://iili.io/2gbcNBn.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-211</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 5 -->
+<div class="product" data-product-name="GA45-305" data-price="100">
+    <img src="https://iili.io/2gbVJCN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-305</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 6 -->
+<div class="product" data-product-name="GA45-320" data-price="100">
+    <img src="https://iili.io/2gbXxr7.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-320</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 7 -->
+<div class="product" data-product-name="GA20-307" data-price="100">
+    <img src="https://iili.io/2gbexrQ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA20-307</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 8 -->
+<div class="product" data-product-name="GA20-348" data-price="100">
+    <img src="https://iili.io/2gbv05N.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA20-348</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 9 -->
+<div class="product" data-product-name="GA31-298" data-price="100">
+    <img src="https://iili.io/2gb8puS.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-298</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 10 -->
+<div class="product" data-product-name="GA45-298" data-price="100">
+    <img src="https://iili.io/2gbgApp.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-298</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+
+<!-- Produto 11 -->
+<div class="product" data-product-name="GA45-307" data-price="100">
+    <img src="https://iili.io/2gb6M8J.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-307</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 12 -->
+<div class="product" data-product-name="GA20.311" data-price="100">
+    <img src="https://iili.io/2gbDY1p.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA20.311</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 13 -->
+<div class="product" data-product-name="GA31.312" data-price="100">
+    <img src="https://iili.io/2gbmTiv.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.312</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 14 -->
+<div class="product" data-product-name="GA45.310" data-price="100">
+    <img src="https://iili.io/2gbps3l.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.310</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 15 -->
+<div class="product" data-product-name="GA45.311" data-price="100">
+    <img src="https://iili.io/2gbyyNt.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.311</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 16 -->
+<div class="product" data-product-name="GA45.312" data-price="100">
+    <img src="https://iili.io/2gmHFhF.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.312</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 17 -->
+<div class="product" data-product-name="GA45.314" data-price="100">
+    <img src="https://iili.io/2gm2gZ7.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.314</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 18 -->
+<div class="product" data-product-name="GA31.278" data-price="100">
+    <img src="https://iili.io/2gmqR19.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.278</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 19 -->
+<div class="product" data-product-name="GA31.279" data-price="100">
+    <img src="https://iili.io/2gmB7CN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.279</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 20 -->
+<div class="product" data-product-name="GA31.280" data-price="100">
+    <img src="https://iili.io/2gmnZhv.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.280</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 21 -->
+<div class="product" data-product-name="GA45-265" data-price="100">
+    <img src="https://iili.io/2gmIOFV.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-265</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 22 -->
+<div class="product" data-product-name="GA45-328" data-price="100">
+    <img src="https://iili.io/2gmTlWJ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-328</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 23 -->
+<div class="product" data-product-name="GA45-330" data-price="100">
+    <img src="https://iili.io/2gmAjMG.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-330</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 24 -->
+<div class="product" data-product-name="GA45-332" data-price="100">
+    <img src="https://iili.io/2gmaTQ9.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-332</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 25 -->
+<div class="product" data-product-name="GA45-333" data-price="100">
+    <img src="https://iili.io/2gm0vjV.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-333</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 26 -->
+<div class="product" data-product-name="GA45-334" data-price="100">
+    <img src="https://iili.io/2gm1xcu.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-334</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 27 -->
+<div class="product" data-product-name="GA31.338-onça" data-price="100">
+    <img src="https://iili.io/2gmVg29.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.338-onça</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 28 -->
+<div class="product" data-product-name="GA31.338" data-price="100">
+    <img src="https://iili.io/2gmwkUN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.338</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 29 -->
+<div class="product" data-product-name="GA31.359" data-price="100">
+    <img src="https://iili.io/2gmO8tn.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.359</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 30 -->
+<div class="product" data-product-name="GA31.359-colorido" data-price="100">
+    <img src="https://iili.io/2gmebeI.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.359-colorido</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 31 -->
+<div class="product" data-product-name="GA31.360-escuro" data-price="100">
+    <img src="https://iili.io/2gm4LHG.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.360-escuro</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 32 -->
+<div class="product" data-product-name="GA31.360-claro" data-price="100">
+    <img src="https://iili.io/2gm6wsS.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.360-claro</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 33 -->
+<div class="product" data-product-name="GA31-357" data-price="100">
+    <img src="https://iili.io/2gmiNSe.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-357</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 34 -->
+<div class="product" data-product-name="GA31-358" data-price="100">
+    <img src="https://iili.io/2gmsRbj.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-358</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 35 -->
+<div class="product" data-product-name="GA31-362" data-price="100">
+    <img src="https://iili.io/2gmbyTF.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-362</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 36 -->
+<div class="product" data-product-name="GA45-341" data-price="100">
+    <img src="https://iili.io/2gmpFou.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-341</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 37 -->
+<div class="product" data-product-name="GA45-367" data-price="100">
+    <img src="https://iili.io/2gmy4It.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-367</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 38 -->
+<div class="product" data-product-name="GA31-355" data-price="100">
+    <img src="https://iili.io/2gpHClf.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-355</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 39 -->
+<div class="product" data-product-name="GA31-356" data-price="100">
+    <img src="https://iili.io/2gpHrsn.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-356</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 40 -->
+<div class="product" data-product-name="GA31-365" data-price="100">
+    <img src="https://iili.io/2gpJLEg.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-365</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 41 -->
+<div class="product" data-product-name="GA31-366" data-price="100">
+    <img src="https://iili.io/2gpdsN2.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-366</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 42 -->
+<div class="product" data-product-name="GA31.378" data-price="100">
+    <img src="https://iili.io/2gpKeJs.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.378</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 43 -->
+<div class="product" data-product-name="GA31.379" data-price="100">
+    <img src="https://iili.io/2gpfCLN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.379</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 44 -->
+<div class="product" data-product-name="GA31.380" data-price="100">
+    <img src="https://iili.io/2gpq78g.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.380</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 45 -->
+<div class="product" data-product-name="GA31.381" data-price="100">
+    <img src="https://iili.io/2gpBQ7n.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.381</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 46 -->
+<div class="product" data-product-name="GA31.382" data-price="100">
+    <img src="https://iili.io/2gpn9wJ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.382</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 47 -->
+<div class="product" data-product-name="GA45.380" data-price="100">
+    <img src="https://iili.io/2gpx83N.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.380</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 48 -->
+<div class="product" data-product-name="GA31-386" data-price="100">
+    <img src="https://iili.io/24voi5F.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-386</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 49 -->
+<div class="product" data-product-name="GA31-387" data-price="100">
+    <img src="https://iili.io/24vxjBR.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-387</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>      
+<!-- Produto 50 -->
+<div class="product" data-product-name="GA31-389-DOURADA" data-price="100">
+    <img src="https://iili.io/24UOUyQ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-389-DOURADA</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>      
+<!-- Produto 51 -->
+<div class="product" data-product-name="GA31-389-CAMEL" data-price="100">
+    <img src="https://iili.io/246lPet.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-389-CAMEL</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>    
+<!-- Produto 52 -->
+<div class="product" data-product-name="GA31-402" data-price="100">
+    <img src="https://iili.io/2Qo8dS2.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-402</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>      
+<!-- Produto 53 -->
+<div class="product" data-product-name="GA31.403" data-price="100">
+    <img src="https://iili.io/2gpDLy7.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31.403</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>   
+<!-- Produto 54 -->
+<div class="product" data-product-name="GA45.400" data-price="100">
+    <img src="https://iili.io/2gppC2R.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45.400</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 55 -->
+<div class="product" data-product-name="GA57.029" data-price="100">
+    <img src="https://iili.io/2gy9CbI.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.029</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 56 -->
+<div class="product" data-product-name="GA31-401" data-price="100">
+    <img src="https://iili.io/2rBvL8l.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA31-401</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 57 -->
+<div class="product" data-product-name="GA45-401-ouro-rose" data-price="100">
+    <img src="https://iili.io/2rB6ssI.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-401-ouro-rose</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 58 -->
+<div class="product" data-product-name="GA45-401-marrom-café" data-price="100">
+    <img src="https://iili.io/26qecv4.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-401-marrom-café</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 59 -->
+<div class="product" data-product-name="GA45-401-bronze" data-price="100">
+    <img src="https://iili.io/26q8nvj.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-401-bronze</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 60 -->
+<div class="product" data-product-name="GA45-401-prata" data-price="100">
+    <img src="https://iili.io/26qSjWB.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-401-prata</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 61 -->
+<div class="product" data-product-name="GA38-001" data-price="100">
+    <img src="https://iili.io/26qgB3X.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-001</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 62 -->
+<div class="product" data-product-name="GA38-002-ouro-rose" data-price="100">
+    <img src="https://iili.io/26q4nIf.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-002-ouro-rose</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 63 -->
+<div class="product" data-product-name="GA38-002-camel" data-price="100">
+    <img src="https://iili.io/26BsadN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-002-camel</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 64 -->
+<div class="product" data-product-name="GA38-003-cobre" data-price="100">
+    <img src="https://iili.io/26E9AXf.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-003-cobre</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 65 -->
+<div class="product" data-product-name="GA38-003-marrom-café" data-price="100">
+    <img src="https://iili.io/26E3NO7.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-003-marrom-café</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>  
+<!-- Produto 66 -->
+<div class="product" data-product-name="GA38-004" data-price="100">
+    <img src="https://iili.io/26EYik7.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-004</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 67 -->
+<div class="product" data-product-name="GA38-005" data-price="100">
+    <img src="https://iili.io/26EasFR.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-005</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 68 -->
+<div class="product" data-product-name="GA38-006" data-price="100">
+    <img src="https://iili.io/26EGUwN.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA38-006</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 69 -->
+<div class="product" data-product-name="GA45-398" data-price="100">
+    <img src="https://iili.io/26PoIwX.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA45-398</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 70 -->
+<div class="product" data-product-name="GA57.001-animal-print" data-price="100">
+    <img src="https://iili.io/26PzYpS.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.001-animal-print</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 71 -->
+<div class="product" data-product-name="GA57.001-vinho" data-price="100">
+    <img src="https://iili.io/26Puvn9.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.001-vinho</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 72 -->
+<div class="product" data-product-name="GA57.003" data-price="100">
+    <img src="https://iili.io/26PY9ft.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.003</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 73 -->
+<div class="product" data-product-name="GA57.004" data-price="100">
+    <img src="https://iili.io/26Palj4.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.004</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 74 -->
+<div class="product" data-product-name="GA57.005" data-price="100">
+    <img src="https://iili.io/26PVBXs.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.005</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 75 -->
+<div class="product" data-product-name="GA57.006" data-price="100">
+    <img src="https://iili.io/26POZxI.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.006</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 76 -->
+<div class="product" data-product-name="GA57.007" data-price="100">
+    <img src="https://iili.io/26PeAzB.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.007</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 77 -->
+<div class="product" data-product-name="GA57.008" data-price="100">
+    <img src="https://iili.io/2Po4RWl.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.008</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 78 -->
+<div class="product" data-product-name="GA57.010" data-price="100">
+    <img src="https://iili.io/2PoLnAF.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.010</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 79 -->
+<div class="product" data-product-name="GA57.011" data-price="100">
+    <img src="https://iili.io/2Pot3Pf.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.011</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div> 
+<!-- Produto 80 -->
+<div class="product" data-product-name="GA57.012-dourado" data-price="100">
+    <img src="https://iili.io/2PxN75l.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.012-dourado</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 81 -->
+<div class="product" data-product-name="GA57.012-nude" data-price="100">
+    <img src="https://iili.io/2PxrBea.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.012-nude</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 82 -->
+<div class="product" data-product-name="GA57.014" data-price="100">
+    <img src="https://iili.io/2PxiQ9t.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.014</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 83 -->
+<div class="product" data-product-name="GA57.015" data-price="100">
+    <img src="https://iili.io/2PxLlIe.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.015</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 84 -->
+<div class="product" data-product-name="GA57.016-nude" data-price="100">
+    <img src="https://iili.io/2PzEQMx.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.016-nude</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 85 -->
+<div class="product" data-product-name="GA57.016-grafite" data-price="100">
+    <img src="https://iili.io/2Pzlbat.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.016-grafite</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 86 -->
+<div class="product" data-product-name="GA57.017" data-price="100">
+    <img src="https://iili.io/2Pzh1Gs.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.017</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 87 -->
+<div class="product" data-product-name="GA57.018" data-price="100">
+    <img src="https://iili.io/2Pz83mv.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.018</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 88 -->
+<div class="product" data-product-name="GA57.019" data-price="100">
+    <img src="https://iili.io/2Pz441V.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.019</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 89 -->
+<div class="product" data-product-name="GA57.020" data-price="100">
+    <img src="https://iili.io/2PzL1Va.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.020</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 90 -->
+<div class="product" data-product-name="GA57.039" data-price="100">
+    <img src="https://iili.io/2PIJbHu.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.039</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 91 -->
+<div class="product" data-product-name="GA57.022" data-price="100">
+    <img src="https://iili.io/2PI2YrP.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.022</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 92 -->
+<div class="product" data-product-name="GA57.023" data-price="100">
+    <img src="https://iili.io/2PI3cMl.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.023</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 93 -->
+<div class="product" data-product-name="GA57.024" data-price="100">
+    <img src="https://iili.io/2PIksQ2.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.024</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 94 -->
+<div class="product" data-product-name="GA57.025" data-price="100">
+    <img src="https://iili.io/2PIvw8u.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.025</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 95 -->
+<div class="product" data-product-name="GA57.026" data-price="100">
+    <img src="https://iili.io/2PI87VV.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.026</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 96 -->
+<div class="product" data-product-name="GA57.027" data-price="100">
+    <img src="https://iili.io/2PIDVV9.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.027</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 97 -->
+<div class="product" data-product-name="GA57.028" data-price="100">
+    <img src="https://iili.io/2PIb9ls.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.028</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 98 -->
+<div class="product" data-product-name="GA57.029" data-price="100">
+    <img src="https://iili.io/2PTKL57.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.029</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 99 -->
+<div class="product" data-product-name="GA57.030" data-price="100">
+    <img src="https://iili.io/2PTIZml.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA57.030</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 100 -->
+<div class="product" data-product-name="GA58.032" data-price="100">
+    <img src="https://iili.io/2PTTrTQ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.032</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 101 -->
+<div class="product" data-product-name="GA58.033" data-price="100">
+    <img src="https://iili.io/2PTultV.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.033</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 102 -->
+<div class="product" data-product-name="GA58.034" data-price="100">
+    <img src="https://iili.io/2PTAx5J.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.034</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 103 -->
+<div class="product" data-product-name="GA58.035" data-price="100">
+    <img src="https://iili.io/2PTRTYu.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.035</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 104 -->
+<div class="product" data-product-name="GA58.036" data-price="100">
+    <img src="https://iili.io/2PT0XUB.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.036</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 105 -->
+<div class="product" data-product-name="GA58.045" data-price="100">
+    <img src="https://iili.io/2PTEvFR.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.045</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 106 -->
+<div class="product" data-product-name="GA58.046" data-price="100">
+    <img src="https://iili.io/2PTG1xn.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.046</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 107 -->
+<div class="product" data-product-name="GA58.047" data-price="100">
+    <img src="https://iili.io/2PTM9Jp.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.047</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 108 -->
+<div class="product" data-product-name="GA58.048" data-price="100">
+    <img src="https://iili.io/2PTMzeS.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.048</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 109 -->
+<div class="product" data-product-name="GA58.049" data-price="100">
+    <img src="https://iili.io/2PTMjEJ.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.049</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 110 -->
+<div class="product" data-product-name="GA58.050" data-price="100">
+    <img src="https://iili.io/2PTXhBe.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.050</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 111 -->
+<div class="product" data-product-name="GA58.059" data-price="100">
+    <img src="https://iili.io/2PThW9R.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58.059</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 112 -->
+<div class="product" data-product-name="GA58-043" data-price="100">
+    <img src="https://iili.io/2PTjIVt.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58-043</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 113 -->
+<div class="product" data-product-name="GA58-053" data-price="100">
+    <img src="https://iili.io/2PTNtln.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58-053</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 114 -->
+<div class="product" data-product-name="GA58-055" data-price="100">
+    <img src="https://iili.io/2PT8BEB.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58-055</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 115 -->
+<div class="product" data-product-name="GA58-057" data-price="100">
+    <img src="https://iili.io/2PT8WQ4.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58-057</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+<!-- Produto 116 -->
+<div class="product" data-product-name="GA58-061" data-price="100">
+    <img src="https://iili.io/2PTSnn4.png" alt="Produto" class="product-image">
+    <div class="product-info">
+        <h3>GA58-061</h3>
+        <p>Preço Unitário: R$ 100,00</p>
+        <div class="sizes">
+            <input type="number" min="0" placeholder="33" data-size="33">
+            <input type="number" min="0" placeholder="34" data-size="34">
+            <input type="number" min="0" placeholder="35" data-size="35">
+            <input type="number" min="0" placeholder="36" data-size="36">
+            <input type="number" min="0" placeholder="37" data-size="37">
+            <input type="number" min="0" placeholder="38" data-size="38">
+            <input type="number" min="0" placeholder="39" data-size="39">
+            <input type="number" min="0" placeholder="40" data-size="40">
+        </div>
+    </div>
+    <button class="add-to-cart">Adicionar ao Carrinho</button>
+</div>
+        </div>
+
+        <!-- Resumo -->
+        <div class="cart">
+            <h2>Informações do Pedido</h2>
+            <input type="text" id="razao-social" placeholder="Razão Social">
+            <input type="text" id="cnpj" placeholder="CNPJ">
+            <input type="text" id="endereco" placeholder="Endereço">
+            <input type="text" id="representante" placeholder="Nome do Representante">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="telefone" placeholder="Telefone">
+            <input type="date" id="prazo-faturamento" placeholder="Prazo de Faturamento">
+            <input type="text" id="previsao-pagamento" placeholder="Condição de Pagamento">
+            <label>
+                <input type="checkbox" id="no-reset">ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤNão resetar informações do pedido
+            </label>
+            <br>
+            <button class="place-order" id="place-order" disabled>Fazer Pedido</button>
+        </div>
+
+        <!-- Relatório -->
+        <div class="summary" id="summary"></div>
+        <h6>Made by ocoronato</h6>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script>
+        const cartInputs = document.querySelectorAll('.cart input');
+        const placeOrderButton = document.getElementById('place-order');
+        const noResetCheckbox = document.getElementById('no-reset');
+        const products = document.querySelectorAll('.product');
+        const summaryDiv = document.getElementById('summary');
+        const productList = document.getElementById('productList');
+        let cart = [];
+
+        cartInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const allFilled = Array.from(cartInputs).every(i => i.value.trim() !== '');
+                placeOrderButton.disabled = !allFilled;
+            });
+        });
+
+        products.forEach(product => {
+            const addToCartButton = product.querySelector('.add-to-cart');
+            addToCartButton.addEventListener('click', () => {
+                const productName = product.dataset.productName;
+                const productPrice = parseFloat(product.dataset.price);
+                const productImage = product.querySelector('.product-image').src;
+                const sizes = product.querySelectorAll('.sizes input');
+                const selectedSizes = Array.from(sizes).map(sizeInput => {
+                    const size = sizeInput.dataset.size;
+                    const quantity = parseInt(sizeInput.value) || 0;
+                    return { size, quantity };
+                });
+
+                let totalPrice = 0;
+                let totalSizes = 0;
+
+                selectedSizes.forEach(item => {
+                    totalPrice += item.quantity * productPrice;
+                    totalSizes += item.quantity;
+                });
+
+                if (totalPrice > 0) {
+                    cart.push({ productName, productPrice, productImage, selectedSizes, totalPrice, totalSizes });
+                    updateCartSummary();
+                }
+            });
+        });
+
+        function updateCartSummary() {
+            summaryDiv.innerHTML = '';
+            let totalPedido = 0;
+
+            cart.forEach(item => {
+                let sizesDetails = item.selectedSizes.map(sizeItem => `${sizeItem.size}: ${sizeItem.quantity}`).join(' | ');
+                summaryDiv.innerHTML += `
+                    <div>
+                        <h3>${item.productName}</h3>
+                        <p>${sizesDetails}</p>
+                        <p>Total de Pares: ${item.totalSizes}</p>
+                        <p>Total: R$ ${item.totalPrice.toFixed(2)}</p>
+                    </div>
+                `;
+                totalPedido += item.totalPrice;
+            });
+
+            summaryDiv.innerHTML += `
+                <div><strong>Total do Pedido: R$ ${totalPedido.toFixed(2)}</strong></div>
+            `;
+        }
+
+        placeOrderButton.addEventListener('click', () => {
+            const cartDetails = {
+                razaoSocial: document.getElementById('razao-social').value,
+                cnpj: document.getElementById('cnpj').value,
+                endereco: document.getElementById('endereco').value,
+                representante: document.getElementById('representante').value,
+                email: document.getElementById('email').value,
+                telefone: document.getElementById('telefone').value,
+                prazoFaturamento: document.getElementById('prazo-faturamento').value,
+                previsaoPagamento: document.getElementById('previsao-pagamento').value,
+            };
+
+            const productDetails = cart.map(item => {
+                let sizesDetails = item.selectedSizes.map(sizeItem => `${sizeItem.size}: ${sizeItem.quantity}`).join(' | ');
+                return `
+                    <div>
+                        <h3>${item.productName}</h3>
+                        <img src="${item.productImage}" alt="${item.productName}" style="width: 100px; height: 100px; object-fit: cover;">
+                        <p>${sizesDetails}</p>
+                        <p>Total de Pares: ${item.totalSizes}</p>
+                        <p>Total: R$ ${item.totalPrice.toFixed(2)}</p>
+                    </div>
+                `;
+            }).join('');
+
+            let totalPedido = cart.reduce((acc, item) => acc + item.totalPrice, 0);
+
+            const currentDate = new Date();
+            const formattedDate = `${currentDate.toLocaleDateString()} ${currentDate.toLocaleTimeString()}`;
+
+            const pdfContent = `
+                <h1>Pedido</h1>
+                <p><strong>Razão Social:</strong> ${cartDetails.razaoSocial}</p>
+                <p><strong>CNPJ:</strong> ${cartDetails.cnpj}</p>
+                <p><strong>Endereço:</strong> ${cartDetails.endereco}</p>
+                <p><strong>Representante:</strong> ${cartDetails.representante}</p>
+                <p><strong>Email:</strong> ${cartDetails.email}</p>
+                <p><strong>Telefone:</strong> ${cartDetails.telefone}</p>
+                <p><strong>Prazo de Faturamento:</strong> ${cartDetails.prazoFaturamento}</p>
+                <p><strong>Condição de Pagamento:</strong> ${cartDetails.previsaoPagamento}</p>
+                <hr>
+                <h2>Produtos</h2>
+                ${productDetails}
+                <hr>
+                <h3><strong>Total do Pedido: R$ ${totalPedido.toFixed(2)}</strong></h3>
+                <hr>
+                <p style="text-align: center; font-size: 12px;">Gerado em: ${formattedDate}</p>
+            `;
+
+            const pdfElement = document.createElement('div');
+            pdfElement.innerHTML = pdfContent;
+
+            html2pdf().set({ html2canvas: { useCORS: true } }).from(pdfElement).save('pedido.pdf');
+
+            // Reseta o carrinho, a menos que o checkbox "no-reset" esteja marcado
+            cart = [];
+            summaryDiv.innerHTML = '';
+
+            document.querySelectorAll('.sizes input').forEach(input => input.value = '');
+            
+            // Se o checkbox "Não resetar informações do pedido" não estiver marcado, reseta as informações do pedido
+            if (!noResetCheckbox.checked) {
+                cartInputs.forEach(input => input.value = '');
+            }
+        });
+
+        // Função para filtrar os produtos com base no termo de busca
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productItems = productList.querySelectorAll('.product');
+
+            productItems.forEach(item => {
+                const productName = item.dataset.productName.toLowerCase();
+                if (productName.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
